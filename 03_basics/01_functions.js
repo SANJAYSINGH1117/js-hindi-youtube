@@ -68,3 +68,35 @@ function returnSecondValue(getArray){
 
 // console.log(returnSecondValue(myNewArray));
 console.log(returnSecondValue([200, 400, 500, 1000]));
+
+//---------------------------------------------------------------------
+
+// // This is a constructor function
+// function User(username, loginCount, isLoggedIn) {
+//     this.username = username; // Initializes property on the new object
+//     this.loginCount = loginCount;
+// }
+
+// // Calling it with 'new' is using the constructor
+// const userOne = new User("Sanjay", 25, true); 
+// // userOne is now { username: "Sanjay", loginCount: 25, ... }
+// console.log(userOne)
+
+class Car {
+    // This is the constructor method
+    constructor(make, model, year) {
+        // Initializes the new Car object's properties
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+    
+    getDetails() {
+        return `${this.make} ${this.model} ${this.year}`;
+    }
+}
+
+// Calling the class constructor
+const myCar = new Car("Honda", "Civic", 2024);
+// myCar is initialized via the constructor and ready to use
+console.log(myCar.getDetails()); // Output: Honda Civic
