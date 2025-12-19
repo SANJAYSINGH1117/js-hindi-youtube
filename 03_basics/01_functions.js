@@ -100,3 +100,80 @@ class Car {
 const myCar = new Car("Honda", "Civic", 2024);
 // myCar is initialized via the constructor and ready to use
 console.log(myCar.getDetails()); // Output: Honda Civic
+
+
+
+
+
+//-------------------
+program to determine evan and odd number using functions and class
+// 1. The Logic Function (The "Brain")
+function checkNumber(input) {
+    let n = Number(input);
+    
+    // Check for empty strings or non-numbers
+    if (input.trim() === "" || isNaN(n)) {
+        console.log("⚠️ Invalid input! Please enter a real number.");
+    } else {
+        // Using a ternary operator to decide Even or Odd
+        console.log(n % 2 === 0 ? `🟢 ${n} is Even` : `🔵 ${n} is Odd`);
+    }
+}
+
+// 2. The Loop Function (The "Body")
+function startApp() {
+    const exitWords = ["stop", "exit", "quit", "done"];
+
+    while (true) {
+        let userIn = prompt("Enter a number (or type 'stop'):");
+
+        // Handle ESC (null) or checking if input is in our exitWords array
+        if (userIn === null || exitWords.includes(userIn.toLowerCase().trim())) {
+            console.log("👋 Program Closed.");
+            break; 
+        }
+
+        // Call the logic function
+        checkNumber(userIn);
+    }
+}
+
+// 3. Run the program
+startApp();
+
+// Using class
+
+class NumberApp {
+    constructor() {
+        this.exitWords = ["stop", "exit", "quit", "done"];
+    }
+    
+    // The Logic
+    check(input) {
+        let n = Number(input);
+        if (input.trim() === "" || isNaN(n)) {
+            console.log("⚠️ Invalid input! Please enter a real number.");
+        } else {
+            console.log(n % 2 === 0 ? `🟢 ${n} is Even` : `🔵 ${n} is Odd`);
+        }
+    }
+
+    // The Loop
+    start() {
+        while (true) {
+            let userIn = prompt("Enter a number (or type 'stop'):");
+
+            // Handle ESC or Exit words
+            if (userIn === null || this.exitWords.includes(userIn.toLowerCase().trim())) {
+                console.log("👋 Program Closed.");
+                break;
+            }
+
+            this.check(userIn);
+        }
+    }
+}
+
+// Start the app
+const myApp = new NumberApp();
+myApp.start();
